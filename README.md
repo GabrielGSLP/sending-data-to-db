@@ -1,2 +1,2 @@
-# sending-data-to-db
-Simple project in Kotlin language and Spring Boot for Kafka.
+# kotlin-sending-producer-data-to-db
+Sending data from a Kafka Producer to a h2 database.
