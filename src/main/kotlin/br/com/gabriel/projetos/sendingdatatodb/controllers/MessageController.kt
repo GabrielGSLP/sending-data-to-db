@@ -11,19 +11,10 @@ import org.springframework.web.bind.annotation.RestController
 @RequestMapping("/messages")
 class MessageController(private val kafkaProducer: KafkaProducer) {
     @PostMapping
-    fun sendMessage1(@RequestBody message: Message){
+    fun sendMessages(@RequestBody message: Message){
         kafkaProducer.sendMessage("topic1", message)
-    }
-    @PostMapping
-    fun sendMessage2(@RequestBody message: Message){
         kafkaProducer.sendMessage("topic2", message)
-    }
-    @PostMapping
-    fun sendMessage3(@RequestBody message: Message){
         kafkaProducer.sendMessage("topic3", message)
-    }
-    @PostMapping
-    fun sendMessage4(@RequestBody message: Message){
         kafkaProducer.sendMessage("topic4", message)
     }
 }
