@@ -12,7 +12,19 @@ class KafkaConsumer {
     lateinit var messageRepository : MessageRepository
 
     @KafkaListener(topics = ["topic1"])
-    fun consumeMessage(message: Message){
+    fun consumeMessage1(message: Message){
+        messageRepository.save(message)
+    }
+    @KafkaListener(topics = ["topic2"])
+    fun consumeMessage2(message: Message){
+        messageRepository.save(message)
+    }
+    @KafkaListener(topics = ["topic3"])
+    fun consumeMessage3(message: Message){
+        messageRepository.save(message)
+    }
+    @KafkaListener(topics = ["topic4"])
+    fun consumeMessage4(message: Message){
         messageRepository.save(message)
     }
 

@@ -2,6 +2,7 @@ package br.com.gabriel.projetos.sendingdatatodb.configuration
 
 import br.com.gabriel.projetos.sendingdatatodb.entities.Message
 import org.apache.kafka.common.serialization.StringDeserializer
+import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.beans.factory.annotation.Value
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
