@@ -7,16 +7,13 @@ import org.springframework.kafka.core.KafkaTemplate
 import org.springframework.stereotype.Service
 
 @Service
-class KafkaProducer {
+class KafkaProducer(var kafkaTemplate: KafkaTemplate<String, Message>, var kafkaTemplateOrderBi: KafkaTemplate<String, OrderBi>) {
 
-    @Autowired
-    lateinit var kafkaTemplate: KafkaTemplate<String, Message>
-    lateinit var kafkaTemplateAvros: KafkaTemplate<String, OrderBi>
 
     fun sendMessage(topic: String, message: Message) {
         kafkaTemplate.send(topic, message)
     }
     fun sendAvro(topic: String, orderBi: OrderBi) {
-        kafkaTemplateAvros.send(topic, orderBi)
+        kafkaTemplateOrderBi.send(topic, orderBi)
     }
 }

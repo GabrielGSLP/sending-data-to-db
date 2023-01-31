@@ -7,7 +7,7 @@ import jakarta.persistence.Id
 class OrderBi
 (
                    @Id
-                   val orderId: Long,
+                   val orderId: String?,
                    val referenceId: String,
                    val costumerName: String,
                    val costumerEmail: String,

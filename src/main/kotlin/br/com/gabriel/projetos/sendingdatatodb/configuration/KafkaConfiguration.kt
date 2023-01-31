@@ -1,6 +1,7 @@
 package br.com.gabriel.projetos.sendingdatatodb.configuration
 
 import br.com.gabriel.projetos.sendingdatatodb.entities.Message
+import br.com.gabriel.projetos.sendingdatatodb.entities.OrderBi
 import org.apache.kafka.common.serialization.StringDeserializer
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.beans.factory.annotation.Value
@@ -23,6 +24,10 @@ class KafkaConfiguration {
 
     @Bean
     fun kafkaTemplate(producerFactory: ProducerFactory<String, Message>): KafkaTemplate<String, Message> {
+        return KafkaTemplate(producerFactory)
+    }
+    @Bean
+    fun kafkaTemplateOrderBi(producerFactory: ProducerFactory<String, OrderBi>): KafkaTemplate<String, OrderBi> {
         return KafkaTemplate(producerFactory)
     }
 
